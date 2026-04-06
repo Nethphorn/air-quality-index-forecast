@@ -43,3 +43,6 @@ pip install -r requirements.txt
 - `requirements.txt`: 📄 List of libraries required to run the project.
 - `run-venv.txt`: 📜 Quick reference for virtual environment setup instructions.
 - `data/`: 📁 _(Git Ignored)_ Directory for local datasets (CSV, JSON, etc.).
+
+## Citation
+Chen, S. (2015). Beijing PM2.5 [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5JS49.
