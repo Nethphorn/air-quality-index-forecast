@@ -31,16 +31,22 @@ source .venv/bin/activate
 
 ### 📦 Installation
 
-Install the necessary dependencies using `pip`:
+To ensure you have exactly the same environment as the rest of the team:
 
 ```bash
+# Recommended: Install from the exact lock file
+pip install -r requirements-lock.txt
+
+# Or, if you want just the top-level requirements:
 pip install -r requirements.txt
 ```
 
 ## 📊 Project Structure
 
 - `data.ipynb`: 🧪 The main Jupyter notebook used for data preprocessing, model exploration, and visualization.
-- `requirements.txt`: 📄 List of libraries required to run the project.
+- `requirements.txt`: 📄 Top-level libraries required (Pinned to secure versions).
+- `requirements-lock.txt`: 🔒 Exact snapshot of all dependencies for reproducibility.
+- `pyproject.toml`: ⚙️ Configuration for Python tools (Ruff).
 - `run-venv.txt`: 📜 Quick reference for virtual environment setup instructions.
 - `data/`: 📁 _(Git Ignored)_ Directory for local datasets (CSV, JSON, etc.).
 
@@ -58,16 +64,27 @@ pnpm install
 
 ### ✨ Code Quality Tools
 
+- **Ruff**: 🐍 Lightning-fast Python linting and formatting (Handles `.py` and `.ipynb` files).
 - **Prettier**: 🎨 Formats code (Markdown, JSON, etc.) automatically.
 - **cspell**: 🔤 Checks for spelling errors in comments and documentation.
 - **Lefthook**: 🛡️ Orchestrates pre-commit hooks. It will automatically run checks when you `git commit`.
+
+### ⚡ Manual Commands
+For manual checks, you can run:
+```bash
+pnpm format:py   # Formats Python code
+pnpm lint:py     # Lints Python code
+pnpm format      # Formats Markdown/JSON
+pnpm spellcheck  # Checks spelling
+```
 
 ### 🧪 Running Tests
 
 If you're building a web interface or API tests, use **Playwright**:
 
 ```bash
-npx playwright test
+pnpm test
 ```
-## Citation
+
+## 📜 Citation
 Chen, S. (2015). Beijing PM2.5 [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5JS49.
