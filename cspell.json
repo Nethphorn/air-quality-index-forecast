@@ -50,5 +50,5 @@
 		"pygments",
 		"nbformat"
 	],
-	"ignorePaths": ["node_modules", ".venv", "dist", "build"]
+	"ignorePaths": ["node_modules", ".venv", "dist", "build", "requirements-lock.txt"]
 }
