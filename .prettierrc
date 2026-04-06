@@ -1,19 +1,9 @@
 {
-	"useTabs": true,
-	"endOfLine": "lf",
-	"singleQuote": true,
-	"trailingComma": "none",
-	"semi": false,
-	"bracketSpacing": true,
-	"printWidth": 100,
-	"plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
-	"overrides": [
-		{
-			"files": "*.svelte",
-			"options": {
-				"parser": "svelte"
-			}
-		}
-	],
-	"tailwindStylesheet": "./src/routes/layout.css"
+  "useTabs": true,
+  "endOfLine": "lf",
+  "singleQuote": true,
+  "trailingComma": "none",
+  "semi": false,
+  "bracketSpacing": true,
+  "printWidth": 100
 }
