@@ -1,22 +1,24 @@
 {
-  "scripts": {
-    "format": "prettier --write .",
-    "lint": "eslint .",
-    "spellcheck": "cspell \"**/*\"",
-    "test": "playwright test",
-    "postinstall": "lefthook install"
-  },
-  "devDependencies": {
-    "@eslint/compat": "^2.0.4",
-    "@eslint/js": "^10.0.1",
-    "@playwright/test": "^1.59.1",
-    "cspell": "^10.0.0",
-    "eslint": "^10.2.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-no-commented-code": "^1.0.10",
-    "globals": "^17.4.0",
-    "lefthook": "^2.1.5",
-    "prettier": "^3.8.1",
-    "typescript-eslint": "^8.58.0"
-  }
+	"scripts": {
+		"format": "prettier --write .",
+		"lint": "eslint .",
+		"spellcheck": "cspell \"**/*\"",
+		"test": "playwright test",
+		"lint:py": "ruff check . --fix",
+		"format:py": "ruff format .",
+		"postinstall": "lefthook install"
+	},
+	"devDependencies": {
+		"@eslint/compat": "^2.0.4",
+		"@eslint/js": "^10.0.1",
+		"@playwright/test": "^1.59.1",
+		"cspell": "^10.0.0",
+		"eslint": "^10.2.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-no-commented-code": "^1.0.10",
+		"globals": "^17.4.0",
+		"lefthook": "^2.1.5",
+		"prettier": "^3.8.1",
+		"typescript-eslint": "^8.58.0"
+	}
 }

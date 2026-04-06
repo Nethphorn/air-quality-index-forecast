@@ -1,21 +1,31 @@
+# Lefthook Git Hook configuration
+# Documentation: https://github.com/evilmartians/lefthook
+
 pre-commit:
-  parallel: true
+  parallel: false
   commands:
     prettier:
-      glob: '*.{js,ts,svelte,css,scss,md,json,yml,yaml}'
-      run: pnpm exec prettier --check {staged_files}
+      glob: '*.{js,ts,json,md,yml,yaml}'
+      run: pnpm exec prettier --color=false --log-level=warn --write {staged_files}
+      stage_fixed: true
     eslint:
-      glob: '*.{js,ts,svelte}'
-      run: pnpm exec eslint {staged_files}
+      glob: '*.{js,ts,json}'
+      run: pnpm exec eslint --no-color {staged_files}
     cspell:
-      glob: '*.{js,ts,svelte,md}'
-      run: pnpm exec cspell {staged_files}
+      glob: '*'
+      run: pnpm exec cspell --no-color {staged_files}
+    ruff-check:
+      glob: '*.{py,ipynb}'
+      run: ruff check --color never {staged_files} --fix
+      stage_fixed: true
+    ruff-format:
+      glob: '*.{py,ipynb}'
+      run: ruff format --color never {staged_files}
+      stage_fixed: true
 
 pre-push:
   commands:
-    typecheck:
-      run: pnpm check:ci
-    unit-tests:
-      run: pnpm exec vitest run
+    # playwright:
+    #   run: pnpm test
     audit:
       run: pnpm audit --audit-level high
