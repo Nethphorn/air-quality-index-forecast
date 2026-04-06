@@ -43,3 +43,29 @@ pip install -r requirements.txt
 - `requirements.txt`: 📄 List of libraries required to run the project.
 - `run-venv.txt`: 📜 Quick reference for virtual environment setup instructions.
 - `data/`: 📁 _(Git Ignored)_ Directory for local datasets (CSV, JSON, etc.).
+
+## 🛠 Development & Status Checks
+
+To maintain high code quality and consistency across the team, we use several automated "status check" tools.
+
+### 📦 Setup Developer Tools
+
+Since we use **pnpm** for managing developer tools:
+
+```bash
+pnpm install
+```
+
+### ✨ Code Quality Tools
+
+- **Prettier**: 🎨 Formats code (Markdown, JSON, etc.) automatically.
+- **cspell**: 🔤 Checks for spelling errors in comments and documentation.
+- **Lefthook**: 🛡️ Orchestrates pre-commit hooks. It will automatically run checks when you `git commit`.
+
+### 🧪 Running Tests
+
+If you're building a web interface or API tests, use **Playwright**:
+
+```bash
+npx playwright test
+```

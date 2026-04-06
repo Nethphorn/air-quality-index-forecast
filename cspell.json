@@ -1,0 +1,21 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "tensorflow",
+    "scikit",
+    "matplotlib",
+    "seaborn",
+    "ipykernel",
+    "lefthook",
+    "playwright",
+    "aqi",
+    "keras"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    ".venv",
+    "dist",
+    "build"
+  ]
+}
