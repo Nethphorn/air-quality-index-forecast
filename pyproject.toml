@@ -1,0 +1,36 @@
+[tool.ruff]
+# Target Python version
+target-version = "py38"
+
+# Exclude common directories
+exclude = [
+    ".git",
+    ".ipynb_checkpoints",
+    ".venv",
+    "build",
+    "dist",
+    "node_modules",
+]
+
+# Set line length to match Prettier (roughly)
+line-length = 100
+
+[tool.ruff.lint]
+# Enable all default rules plus extra ones (I - imports, N - naming, UP - upgrade)
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "SIM", "TID"]
+ignore = []
+
+# Allow fixable violations to be automatically fixed
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = true
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+known-first-party = ["src"]

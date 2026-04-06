@@ -8,3 +8,14 @@ bun.lockb
 # Miscellaneous
 /static/
 /drizzle/
+
+# Virtual Environments
+.venv/
+env/
+ENV/
+
+# Node
+node_modules/
+dist/
+build/
+.pnpm-debug.log
