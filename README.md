@@ -69,3 +69,5 @@ If you're building a web interface or API tests, use **Playwright**:
 ```bash
 npx playwright test
 ```
+## Citation
+Chen, S. (2015). Beijing PM2.5 [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5JS49.
