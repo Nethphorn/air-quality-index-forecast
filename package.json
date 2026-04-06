@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "spellcheck": "cspell \"**/*\"",
+    "test": "playwright test",
+    "postinstall": "lefthook install"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1",
+    "cspell": "^10.0.0",
+    "eslint": "^10.2.0",
+    "lefthook": "^2.1.5",
+    "@playwright/test": "^1.59.1"
+  }
+}

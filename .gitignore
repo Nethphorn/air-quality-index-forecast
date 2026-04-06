@@ -152,3 +152,16 @@ cython_debug/
 data/
 
 run-venv.txt
+
+# Node.js
+node_modules/
+dist/
+build/
+.pnpm-debug.log
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
