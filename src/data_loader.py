@@ -2,10 +2,9 @@ import os
 import pandas as pd
 from ucimlrepo import fetch_ucirepo
 
-# Path management for cross-directory compatibility
+# Path management
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(BASE_DIR)
-DEFAULT_CACHE_PATH = os.path.join(PROJECT_ROOT, 'data', 'beijing_aqi.csv')
+DEFAULT_CACHE_PATH = os.path.join(BASE_DIR, 'data', 'beijing_aqi.csv')
 
 def get_processed_data(cache_path=DEFAULT_CACHE_PATH):
     """
