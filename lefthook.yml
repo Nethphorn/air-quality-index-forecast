@@ -14,14 +14,6 @@ pre-commit:
     cspell:
       glob: '*'
       run: pnpm exec cspell --no-color {staged_files}
-    ruff-check:
-      glob: '*.{py,ipynb}'
-      run: ruff check --color never {staged_files} --fix
-      stage_fixed: true
-    ruff-format:
-      glob: '*.{py,ipynb}'
-      run: ruff format --color never {staged_files}
-      stage_fixed: true
 
 pre-push:
   commands:
