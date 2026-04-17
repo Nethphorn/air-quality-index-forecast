@@ -6,7 +6,7 @@ from ucimlrepo import fetch_ucirepo
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_CACHE_PATH = os.path.join(BASE_DIR, 'data', 'beijing_aqi.csv')
 
-def get_processed_data(cache_path=DEFAULT_CACHE_PATH):
+def get_processed_data(cache_path=DEFAULT_CACHE_PATH, force_download=False):
     # Check if we already have the data locally
     if os.path.exists(cache_path):
         print(f"Loading cached data from {cache_path}")
