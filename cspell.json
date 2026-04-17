@@ -92,7 +92,19 @@
 		"Zhang",
 		"hyperparameters",
 		"overfitting",
-		"Nethphorn"
+		"Nethphorn",
+		"abspath",
+		"ITEC",
+		"Chiv",
+		"Vithourak",
+		"yscale",
+		"levelname",
+		"getcwd",
+		"dropna",
+		"makedirs",
+		"isna",
+		"iloc",
+		"tolist"
 	],
 
 	"ignorePaths": ["node_modules", ".venv", "dist", "build", "requirements-lock.txt"]
