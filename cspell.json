@@ -6,6 +6,7 @@
 		"annot",
 		"APEC",
 		"aqi",
+		"autoregressive",
 		"cbwd",
 		"celerybeat",
 		"cmap",
@@ -35,6 +36,7 @@
 		"lefthook",
 		"Liang",
 		"linestyle",
+		"LSTM",
 		"matplotlib",
 		"mkdocs",
 		"mypy",
@@ -61,6 +63,7 @@
 		"pytest",
 		"pytype",
 		"reformatted",
+		"RMSE",
 		"ropeproject",
 		"rspa",
 		"scikit",
@@ -86,7 +89,11 @@
 		"xticks",
 		"Xuan",
 		"ylabel",
-		"Zhang"
+		"Zhang",
+		"hyperparameters",
+		"overfitting",
+		"Nethphorn"
 	],
+
 	"ignorePaths": ["node_modules", ".venv", "dist", "build", "requirements-lock.txt"]
 }

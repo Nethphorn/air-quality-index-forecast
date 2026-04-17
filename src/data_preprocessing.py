@@ -8,10 +8,8 @@ from tensorflow.keras.utils import timeseries_dataset_from_array
 
 
 def get_datasets():
-    # Load the data using our standardized loader
     df = get_processed_data()
 
-    # One-hot encoding for categorical columns
     categorical_cols = df.select_dtypes(include=['object', 'string']).columns
     df = pd.get_dummies(df, columns=categorical_cols)
 
@@ -21,21 +19,17 @@ def get_datasets():
     val_df = df[int(n*0.7):int(n*0.9)]
     test_df = df[int(n*0.9):]
 
-    # Scaling (Fit ONLY on training data)
     scaler = MinMaxScaler()
     scaler.fit(train_df)
 
-    # Transform all sets into numpy arrays of type float32
     train_series = scaler.transform(train_df).astype('float32')
     val_series = scaler.transform(val_df).astype('float32')
     test_series = scaler.transform(test_df).astype('float32')
 
-    # 5. Parameters for windowing
     WINDOW_SIZE = 24
     BATCH_SIZE = 32   
     target_idx = df.columns.get_loc('pm2.5')
 
-    # 6. Create Training, Validation, and Test datasets
     train_ds = timeseries_dataset_from_array(
         data=train_series,
         targets=train_series[WINDOW_SIZE:, target_idx],

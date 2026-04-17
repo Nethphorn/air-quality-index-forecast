@@ -17,18 +17,15 @@ def build_model(input_shape):
 def train_model():
     train_ds, val_ds, test_ds, scaler = get_datasets()
     
-    # Get input shape from the first batch
     for x, y in train_ds.take(1):
         input_shape = x.shape[1:]
         break
     
     model = build_model(input_shape)
     
-    # Callbacks
     early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
     model_checkpoint = ModelCheckpoint('best_model.keras', monitor='val_loss', save_best_only=True)
     
-    # Train
     history = model.fit(
         train_ds,
         validation_data=val_ds,
