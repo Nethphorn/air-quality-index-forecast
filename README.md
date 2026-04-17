@@ -128,29 +128,7 @@ Seeing the seasonal trends clearly manifest in the data—where winter months co
     ```bash
     pnpm install
     ```
-
-## Usage Example
-
-### Quick Start (Inference)
-
-To make a prediction using the latest available data, you can run the provided prediction script:
-
-```bash
-python src/predict.py
-```
-
-### Programmatic Usage
-
-You can also use the prediction logic within your own scripts:
-
-```python
-import tensorflow as tf
-from src.predict import predict_latest
-
-# This will load the model and predict based on the latest 24h data
-predict_latest()
-```
-
+    
 ## Project Structure
 
 - `src/data_loader.py`: Handles data ingestion, cleaning, and local caching.
