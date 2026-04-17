@@ -1,4 +1,4 @@
-# 🌍 Air Quality Forecasting: Pipeline Part 2
+# Air Quality Forecasting: Pipeline Part 2
 
 This document covers the advanced preparation steps required for high-integrity Machine Learning models, specifically focusing on data splitting and data leakage prevention.
 

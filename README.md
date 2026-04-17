@@ -39,6 +39,8 @@ The implementation is modularized to ensure reproducibility and high-integrity p
 
 - [Pipeline Documentation Part 1: Ingestion and Preprocessing](doc/PIPELINE_DOCUMENTATION.md): Covers modular loading, categorical encoding, and feature scaling rationale.
 - [Pipeline Documentation Part 2: Splitting and Leakage Prevention](doc/PIPELINE_DOCUMENTATION_PT2.md): Details the chronological splitting strategy and Min-Max scaler fitment logic to prevent information leakage.
+- [Pipeline Documentation Part 3: Architecture and Training](doc/PIPELINE_DOCUMENTATION_PT3.md): Deep dive into the LSTM structure, compilation strategy, and defensive callbacks used in `src/model1`.
+- [Pipeline Documentation Part 4: Evaluation and Performance Analysis](doc/PIPELINE_DOCUMENTATION_PT4.md): Explains the metrics (MAE, RMSE, R²), inverse scaling, and inference process.
 
 ### Data Preprocessing
 
@@ -136,7 +138,7 @@ Seeing the seasonal trends clearly manifest in the data—where winter months co
 To make a prediction using the latest available data, you can run the provided prediction script:
 
 ```bash
-python src/predict.py
+python src/model1/predict.py
 ```
 
 ### Programmatic Usage
@@ -145,19 +147,20 @@ You can also use the prediction logic within your own scripts:
 
 ```python
 import tensorflow as tf
-from src.predict import predict_latest
+from src.model1.predict import predict_latest
 
 # This will load the model and predict based on the latest 24h data
 predict_latest()
 ```
 
-## Project Structure
+## Project Structure (Model 1)
 
-- `src/data_loader.py`: Handles data ingestion, cleaning, and local caching.
-- `src/data_preprocessing.py`: Implements one-hot encoding, normalization, and chronological windowing.
-- `src/train.py`: Defines the LSTM architecture and handles the training process.
-- `src/evaluate.py`: Generates predictions, performs inverse scaling, and calculates final metric reports.
-- `data.ipynb`: Interactive sandbox for exploration and initial model design.
+- `src/model1/data_loader.py`: Handles data ingestion, cleaning, and local caching.
+- `src/model1/data_preprocessing.py`: Implements one-hot encoding, normalization, and chronological windowing.
+- `src/model1/train.py`: Defines the LSTM architecture and handles the training process.
+- `src/model1/evaluate.py`: Generates predictions, performs inverse scaling, and calculates final metric reports.
+- `src/model1/predict.py`: Streamlined inference script for forecasting based on the latest 24-hour sequence.
+- `src/model1/data.ipynb`: Interactive sandbox for exploration and initial model design.
 
 ## Citation
 

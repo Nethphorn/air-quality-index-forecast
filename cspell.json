@@ -104,7 +104,9 @@
 		"makedirs",
 		"isna",
 		"iloc",
-		"tolist"
+		"tolist",
+		"lookback",
+		"overfit"
 	],
 
 	"ignorePaths": ["node_modules", ".venv", "dist", "build", "requirements-lock.txt"]
