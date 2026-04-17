@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from ucimlrepo import fetch_ucirepo
 
-# Path management
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_CACHE_PATH = os.path.join(BASE_DIR, 'data', 'beijing_aqi.csv')
 
@@ -12,7 +12,6 @@ def get_processed_data(cache_path=DEFAULT_CACHE_PATH, force_download=False):
         print(f"Loading cached data from {cache_path}")
         return pd.read_csv(cache_path, index_col='datetime', parse_dates=True)
 
-    # If not, fetch it from UCI
     print("Downloading dataset from UCI Machine Learning Repository...")
     try:
         beijing_pm2_5 = fetch_ucirepo(id=381) 
@@ -22,19 +21,15 @@ def get_processed_data(cache_path=DEFAULT_CACHE_PATH, force_download=False):
         print(f"Error fetching data: {e}")
         return None
 
-    # Standardize and Clean
     df = pd.concat([X, y], axis=1)
     
-    # Create the datetime index
     df['datetime'] = pd.to_datetime(df[['year', 'month', 'day', 'hour']])
     df.set_index('datetime', inplace=True)
     df.drop(['year', 'month', 'day', 'hour'], axis=1, inplace=True)
     
-    # Interpolate missing values
     df['pm2.5'] = df['pm2.5'].interpolate(method='linear')
     df = df.dropna(subset=['pm2.5'])
 
-    # Save to cache
     os.makedirs(os.path.dirname(cache_path), exist_ok=True)
     df.to_csv(cache_path)
     print(f"Data saved and cached to {cache_path}")
