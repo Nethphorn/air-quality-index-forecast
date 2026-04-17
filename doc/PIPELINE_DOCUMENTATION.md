@@ -1,4 +1,4 @@
-# 🌍 Air Quality Forecasting: ML Pipeline Documentation
+# Air Quality Forecasting: ML Pipeline Documentation
 
 This document summarizes the data engineering journey and the code used to prepare the Beijing PM2.5 dataset for Deep Learning.
 
