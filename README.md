@@ -126,7 +126,7 @@ Seeing the seasonal trends clearly manifest in the data—where winter months co
     ```bash
     pip install -r requirements.txt
     ```
-3.  Install developer tools (Optional):
+3.  Install developer tools:
     ```bash
     pnpm install
     ```
